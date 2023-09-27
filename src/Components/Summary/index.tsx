@@ -6,7 +6,7 @@ import { useSummary } from "../../hooks/useSummary";
 import { SummaryCard, SummaryContainer } from "./styles";
 
 export function Summary() {
-  const summary = useSummary()
+  const summary = useSummary();
 
   return(
     <SummaryContainer>
@@ -21,7 +21,7 @@ export function Summary() {
 
       <SummaryCard>
         <header>
-          <span>Saída</span>
+          <span>Saídas</span>
           <ArrowCircleDown size={32} color="#f75a68"/>
         </header>
 
