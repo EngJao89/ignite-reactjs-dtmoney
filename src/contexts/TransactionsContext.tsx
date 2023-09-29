@@ -1,15 +1,16 @@
-import { ReactNode, useCallback, useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState } from 'react'
 import { createContext } from 'use-context-selector'
-import { api } from "../lib/axios";
+import { api } from '../lib/axios'
 
 interface Transaction {
-  id: number;
-  description: string;
-  type: 'income' | 'outcome';
-  price: number;
-  category: string;
-  createdAt: string;
+  id: number
+  description: string
+  type: 'income' | 'outcome'
+  price: number
+  category: string
+  createdAt: string
 }
+
 interface CreateTransactionInput {
   description: string
   price: number
@@ -65,13 +66,13 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     fetchTransactions()
   }, [fetchTransactions])
 
-
   return (
-    <TransactionsContext.Provider value={{ 
-      transactions, 
-      fetchTransactions, 
-      createTransaction 
-    }}
+    <TransactionsContext.Provider
+      value={{
+        transactions,
+        fetchTransactions,
+        createTransaction,
+      }}
     >
       {children}
     </TransactionsContext.Provider>
