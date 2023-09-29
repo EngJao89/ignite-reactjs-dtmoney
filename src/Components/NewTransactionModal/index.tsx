@@ -13,7 +13,7 @@ import {
   Overlay,
   TransactionType,
   TransactionTypeButton,
-} from './styles';
+} from './styles'
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
@@ -68,8 +68,8 @@ export function NewTransactionModal() {
           <X size={24} />
         </CloseButton>
 
-        <form>
-        <input
+        <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
+          <input
             type="text"
             placeholder="Descrição"
             required
@@ -88,7 +88,7 @@ export function NewTransactionModal() {
             {...register('category')}
           />
 
-          <Controller 
+          <Controller
             control={control}
             name="type"
             render={({ field }) => {
@@ -110,10 +110,10 @@ export function NewTransactionModal() {
             }}
           />
 
-          <button type="submit" >
+          <button type="submit" disabled={isSubmitting}>
             Cadastrar
           </button>
-        </form> 
+        </form>
       </Content>
     </Dialog.Portal>
   )
