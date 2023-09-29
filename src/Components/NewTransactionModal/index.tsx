@@ -69,19 +69,23 @@ export function NewTransactionModal() {
         </CloseButton>
 
         <form>
-          <input 
+        <input
             type="text"
             placeholder="Descrição"
+            required
+            {...register('description')}
           />
-
-          <input 
+          <input
             type="number"
             placeholder="Preço"
+            required
+            {...register('price', { valueAsNumber: true })}
           />
-
-          <input 
+          <input
             type="text"
             placeholder="Categoria"
+            required
+            {...register('category')}
           />
 
           <Controller 
